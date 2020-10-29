@@ -1,0 +1,90 @@
+Greedy best-first search (GBFS):
+    search algorithm that expands the node that is closest tto the goal, as estimated by a heuristic function h(n)
+    Heuristic - an estimator
+    h(n) - will take a status input and returns estimate of how close we are to the goal
+    Heuristic func will explore a node if it has the smallest Manhatten distance to the goal (i.e. how many blocks away?)
+
+    remember the Heuristic is NOT a gurantee of the distance but an estimator e.g. it ignores walls and blocks to the goal.
+    we are able to take 'informed' decisions when at nodes with different Manhatten distances. if Manhattan is the same, make an arb decision.
+    GBFS > BFS in our case of the lecture BUT...
+        remember we need to take a good h(n) decision which may be challenging.
+    Is GBFS optimal?
+           Not always.
+
+A* search:
+    We need to modify this to achieve optimality-
+        use A* search
+        instead of just considering h(n), also consider how long it takes to get to that state
+        A* seach: search algorithm to expand node with lowest value of g(n)+h(n) where g(n)=cost to reach node i.e. time h(n)=estimated cost to goal
+        In practice, this looks like GBFS until where the h(n) starts going back up again, and then this will backtrack when comparing lowest(h(n)+g(n))
+
+        so A* is optimal UNDER certain conditions:
+            h(n) is admissible (never overestimates the true cost)
+            h(n) is consistent (for every node n and successor n' with step cost c, h(n)=<h(n') + c)
+
+        A* does use a lot of memory compared to other search algorithms, so is not the best of them ALL.
+
+Adverserial search:
+    Another agent has other objectives e.g. game tic tac toe
+
+ Minimax algorithm:
+    works well for deterministic games
+    i.e. we are trying to win, opponent trying to get us to lose
+    translate to terms computer can understand -> numbers! assign utilities and order the options, win = 1 - lose = -1 - draw = 0
+    Let MAX player(X) aim to maximize score, i.e. aim for 1 or if not possible then 0>-1
+    Let MIN player(O) aim to minimize score, O player wants score to be as small as possible
+
+What does this game need to encode this in an AI:
+    s(0): initial state, how game begins
+    PLAYER(S): function to return which player to move in state s - whose turn?
+    ACTION(s): return legal moves in state s
+    RESULTS(s,a): transition model to return state after action a taken in state s - what is the conseq?
+    TERMINAL(s): checks if state s is a terminal state ->is the game over? e.g. tic-tac-toe where 3x in a row or squares filled
+    UTILITY(s): final numeral value for terminal state s
+
+Why is mini-max considered a recursive algorithm?
+    Putting yourself in the other player's shoes, compare utilities and attempt to either 'minimise' or 'maximise' your score
+
+Formalising mini-max:
+    Given state s:
+        MAX picks action a in actions(s) that produces the highest value of MIN-VALUE(RESULTS(S,A))
+        = max player will pick action a that will pick that the highest option in what the min player will do
+
+        MIN player does the same but backwards.
+
+    function MAX-VALUE(state):
+        if TERMINAL(state):
+            return UTILITY(state)
+
+        v = -(inf) -> we want value to be as low as possible so we always do better than v
+        for action in ACTIONS(state):
+            # get result of taking action in the state and get the min value of this (what's the best the min player can do?)
+            # now compare to current best value and pick the max of these 2
+            # going through all of our possible actions and saying how do we max our score given what other player is doing?
+            v = MAX(v, MIN-VALUE(RESULT(state,action)))
+        return v
+
+    # do the same but opposite for min player
+    function MIN-VALUE(state):
+        if TERMINAL(state):
+            return UTILITY(state)
+
+        v = (inf)
+        for action in ACTIONS(state):
+            v = MIN(v, MAX-VALUE(RESULT(state, action)))
+        return v
+
+What optimisations can be put in place?
+    To run faster/store less
+    Consider values on the other nodes. If we are trying to maximize options and we know the other values will be less, no point exploring the other states.
+    This is called 'Alpha-Beta' Pruning:
+        Where if we have a big long search tree, we can search it more efficiently if we can remove some of the nodes and not look through everything!
+
+    But this still too many options for much more complex games like chess.
+    Better approach - Depth-Limited Minimax:
+        After a certain number of moves i.e. 5 moves ahead, stop and do not consider further.
+        If we are still at a placae where the game is NOT over and we have not assigned scores...
+        Add feature 'evaluation function':
+            function to estimate expected utility of the game from a given state
+            E.g. 0.8 implies they are likely to win but not guranteed.
+            The better the ai at estimating the evaluation function, the better it will play.
