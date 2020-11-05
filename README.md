@@ -11,7 +11,7 @@ A simple game where you play against an AI. Play as either X, the maximizing pla
 <h3> Installation </h3>
 
 Install the required Python package (pygame) for this project.
->> pip3 install -r requirements.txt 
+>> pip3 install -r requirements.txt <<
 or 
 >> py -3.7 -m pip install pygame‑1.9.3‑cp37‑cp37m‑win_amd64.whl
 
