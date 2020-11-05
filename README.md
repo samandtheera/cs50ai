@@ -12,10 +12,14 @@ A simple game where you play against an AI. Play as either X, the maximizing pla
 
 Install the required Python package (pygame) for this project.
 >> pip3 install -r requirements.txt 
+or 
+>> py -3.7 -m pip install pygame‑1.9.3‑cp37‑cp37m‑win_amd64.whl
 
 <h2> Degrees </h2>
 
 Write a program that determines how many “degrees of separation” apart two actors are.
+
+Please read the small file to find two actors you wish to compare as I have deleted the large database of names (too large to upload). 
 
 For example, Emma Watson and Jennifer Lawrence, one inputted, will output - 
 
