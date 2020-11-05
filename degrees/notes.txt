@@ -1,0 +1,9 @@
+To implement the def shortest_path(source, target) function, this is what I want to do:
+
+1. Make source my start state - a name of an actor.
+2. Add source to the frontier
+3. Remove first node from frontier
+4. Run neighbours_for_person func. to accept a person's id as input and return a set of (movie_id, person_id)
+   pairs for all people who starred in a movie with a given person.
+5. Check this neighbours list to check for our goal (target)
+6. If this is our target, return the node.
