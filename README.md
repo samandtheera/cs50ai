@@ -1,4 +1,4 @@
-# cs50ai
+# cs50AI
 
 <h2> Week 0 </h2>
 
@@ -10,8 +10,8 @@ A simple game where you play against an AI. Play as either X, the maximizing pla
 
 <h3> Installation </h3>
 
-install the required Python package (pygame) for this project.
-pip3 install -r requirements.txt
+Install the required Python package (pygame) for this project.
+>> pip3 install -r requirements.txt <<
 
 <h2> Degrees </h2>
 
