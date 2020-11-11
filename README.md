@@ -1,66 +1,17 @@
 # cs50AI
 
-<h2> Week 0 </h2>
+This course explores the concepts and algorithms at the foundation of modern artificial intelligence, diving into the ideas that give rise to technologies like game-playing engines, handwriting recognition, and machine translation. Through hands-on projects, students gain exposure to the theory behind graph search algorithms, classification, optimization, reinforcement learning, and other topics in artificial intelligence and machine learning as they incorporate them into their own Python programs. By course’s end, students emerge with experience in libraries for machine learning as well as knowledge of artificial intelligence principles that enable them to design intelligent systems of their own.
 
-Introduction to CS50AI. Projects: tic-tact-oe AI game and "degrees" project.
+Prerequisites: CS50x or at least one year of experience with Python.
 
-<h2> Tic-tac-toe: </h2>
-
-A simple game where you play against an AI. Play as either X, the maximizing player who moves first, or the minimizing player O.
-
-<h3> Installation </h3>
-
-Install the required Python package (pygame) for this project.
->> pip3 install -r requirements.txt 
-
-or
-
->> py -3.7 -m pip install pygame‑1.9.3‑cp37‑cp37m‑win_amd64.whl
-
-<h2> Degrees </h2>
-
-Write a program that determines how many “degrees of separation” apart two actors are.
-
-Please read the small file to find two actors you wish to compare as I have deleted the large database of names (too large to upload). 
-
-For example, Emma Watson and Jennifer Lawrence, one inputted, will output - 
-
-3 degrees of separation.
-1: Emma Watson and Brendan Gleeson starred in Harry Potter and the Order of the Phoenix
-2: Brendan Gleeson and Michael Fassbender starred in Trespass Against Us
-3: Michael Fassbender and Jennifer Lawrence starred in X-Men: First Clas
-
-<h3> Installation </h3>
-
-None.
-
-<h2> Week 1 </h2>
-
-<h2> Knights </h2>
-
-A logic game. Try this yourself and see how long it will take you to reason through the puzzles. Using knowledge and propositional logic, the AI will be able to reason through all of them to consider whether each character is either a knight or a knave.
-
-Puzzle 0 is the puzzle from the Background. It contains a single character, A.
-A says “I am both a knight and a knave.”
-
-Puzzle 1 has two characters: A and B.
-A says “We are both knaves.”
-B says nothing.
-
-Puzzle 2 has two characters: A and B.
-A says “We are the same kind.”
-B says “We are of different kinds.”
-
-Puzzle 3 has three characters: A, B, and C.
-A says either “I am a knight.” or “I am a knave.”, but you don’t know which.
-B says “A said ‘I am a knave.’”
-B then says “C is a knave.”
-C says “A is a knight.”
-
-In each of the above puzzles, each character is either a knight or a knave. Every sentence spoken by a knight is true, and every sentence spoken by a knave is false.
-
-<h3> Installation </h3>
-
-None.
+Projects for Harvard's [CS50 Introduction to Artificial Intelligence with Python](https://cs50.harvard.edu/ai/2020/) course.
 
 
+## Projects
+
+| Week | Topic            | Name                       | Description                                                        | How to Run                                                            | Video                                   |
+| :--- | :--------------- | :------------------------- | :----------------------------------------------------------------- | :-------------------------------------------------------------------- | :-------------------------------------- |
+| 0    | Search           | [Degrees](degrees)         | Determine how many degrees of separation apart two actors are      | `$ python3 degrees.py small`                                           | [Link]https://youtu.be/3_oP-RrmRww)    |
+| 0    | Search           | [Tic-Tac-Toe](tictactoe)   | Play tic-tac-toe optimally using Minimax algorithm                 | `$ python3 runner.py`                                                  | [Link](https://youtu.be/ppmDqP7B4Mg)    |
+| 1    | Knowledge        | [Knights](knights)         | Solve logic puzzles                                                | `$ python3 puzzle.py`                                                  | [Link](https://youtu.be/SE6lOGCTFVo)    |
+| 1    | Knowledge        | [Minesweeper](minesweeper) | Play Minesweeper                                                   | `$ python3 runner.py`                                                  | [Link](https://youtu.be/YhVC1Sn4l0E)    |
