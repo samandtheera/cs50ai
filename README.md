@@ -14,4 +14,7 @@ Projects for Harvard's [CS50 Introduction to Artificial Intelligence with Python
 | 0    | Search           | [Degrees](degrees)         | Determine how many degrees of separation apart two actors are      | `$ python3 degrees.py small`                                           | [Link](https://youtu.be/3_oP-RrmRww)    |
 | 0    | Search           | [Tic-Tac-Toe](tictactoe)   | Play tic-tac-toe optimally using Minimax algorithm                 | `$ python3 runner.py`                                                  | [Link](https://youtu.be/ppmDqP7B4Mg)    |
 | 1    | Knowledge        | [Knights](knights)         | Solve logic puzzles                                                | `$ python3 puzzle.py`                                                  | [Link](https://youtu.be/SE6lOGCTFVo)    |
-| 1    | Knowledge        | [Minesweeper](minesweeper) | Play Minesweeper                                                   | `$ python3 runner.py`                                                  | [Link](https://youtu.be/B2mny8Y7Xag)    |
+| 1    | Knowledge        | [Minesweeper](minesweeper) | Play Minesweeper                                                   | `$ python3 runner.py`                                           | [Link](https://youtu.be/B2mny8Y7Xag)    |
+
+| 2    | Uncertainty        | [PageRank](pagerank) | Use Pagerank                                                           | `$ python3 pagerank.py corpus0`                                                  | [Link]()    |
+| 2    | Uncertainty        | [Heredity](heredity) | Find genetic information                                               | `$ python3 heredity.py data/family0.csv`                                                  | [Link]()    |
